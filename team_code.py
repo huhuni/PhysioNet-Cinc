@@ -75,7 +75,7 @@ def training_code(data_directory, model_directory):
     # Train models.
 
     # Define parameters for random forest classifier.
-    n_estimators = 10     # Number of trees in the forest.
+    n_estimators = 100     # Number of trees in the forest.
     max_leaf_nodes = 2000 # Maximum number of leaf nodes in each tree.
     random_state = 0     # Random state; set for reproducibility.
 
@@ -90,8 +90,8 @@ def training_code(data_directory, model_directory):
 
     imputer = SimpleImputer().fit(features)
     features = imputer.transform(features)
-    #classifier = RandomForestClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
-    classifier = ExtraTreesClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
+    classifier = RandomForestClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
+    #classifier = ExtraTreesClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
     save_model(filename, classes, leads, imputer, classifier)
 
     # Train 6-lead ECG model.
@@ -105,8 +105,8 @@ def training_code(data_directory, model_directory):
 
     imputer = SimpleImputer().fit(features)
     features = imputer.transform(features)
-    #classifier = RandomForestClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
-    classifier = ExtraTreesClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
+    classifier = RandomForestClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
+    #classifier = ExtraTreesClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
     save_model(filename, classes, leads, imputer, classifier)
 
     # Train 3-lead ECG model.
@@ -120,8 +120,8 @@ def training_code(data_directory, model_directory):
 
     imputer = SimpleImputer().fit(features)
     features = imputer.transform(features)
-    #classifier = RandomForestClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
-    classifier = ExtraTreesClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
+    classifier = RandomForestClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
+    #classifier = ExtraTreesClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
     save_model(filename, classes, leads, imputer, classifier)
 
     # Train 2-lead ECG model.
@@ -135,8 +135,8 @@ def training_code(data_directory, model_directory):
 
     imputer = SimpleImputer().fit(features)
     features = imputer.transform(features)
-    #classifier = RandomForestClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
-    classifier = ExtraTreesClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
+    classifier = RandomForestClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
+    #classifier = ExtraTreesClassifier(n_estimators=n_estimators, max_leaf_nodes=max_leaf_nodes, random_state=random_state).fit(features, labels)
     save_model(filename, classes, leads, imputer, classifier)
 
 ################################################################################
