@@ -4,7 +4,7 @@
 # Some functions are *required*, but you can edit most parts of required functions, remove non-required functions, and add your own function.
 
 from helper_code import *
-import numpy as np, os, sys, joblib, lightgbm as lgb
+import numpy as np, os, sys, joblib
 from sklearn.impute import SimpleImputer
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
 
